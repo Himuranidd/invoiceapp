@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112a28">
+  <title>Account access | The Walkin Online Shop</title>
+  <link rel="stylesheet" href="/auth.css?v=25">
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="auth-brand-panel" aria-label="The Walkin Online Shop">
+      <div class="auth-brand-copy">
+        <span class="auth-kicker">INVOICE STUDIO</span>
+        <h1>Thoughtful tools for everyday business.</h1>
+        <p>Create clear, polished invoices and keep your work in one place.</p>
+      </div>
+      <span class="auth-panel-foot">Simple invoicing, made personal.</span>
+    </section>
+
+    <section class="auth-form-panel">
+      <div class="auth-card">
+        <a class="auth-logo-link" href="/login" aria-label="The Walkin Online Shop home">
+          <img src="/icons/the-walkin-logo.png" alt="The Walkin Online Shop">
+        </a>
+        <div class="auth-heading">
+          <span class="auth-kicker" id="auth-kicker">WELCOME BACK</span>
+          <h2 id="auth-title">Log in to your account</h2>
+          <p id="auth-description">Enter your details to continue to your workspace.</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <label for="login-email">Email address</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
+          <div class="auth-label-row">
+            <label for="login-password">Password</label>
+            <button class="auth-text-button" id="forgot-password" type="button">Forgot password?</button>
+          </div>
+          <div class="password-field">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required maxlength="128">
+            <button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Show password">Show</button>
+          </div>
+          <label class="auth-checkbox"><input name="remember" type="checkbox"><span>Remember me</span></label>
+          <p class="auth-message" id="login-message" role="alert" aria-live="polite"></p>
+          <button class="auth-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <div class="auth-social-actions" aria-label="Social sign-in options">
+            <button type="button" disabled>Google</button>
+            <button type="button" disabled>GitHub</button>
+            <button type="button" disabled>Apple</button>
+          </div>
+          <p class="auth-provider-note">Social sign-in is not configured for this app.</p>
+          <p class="auth-switch">Don't have an account? <a href="/register">Create one</a></p>
+        </form>
+
+        <form id="register-form" hidden novalidate>
+          <label for="register-name">Full name</label>
+          <input id="register-name" name="full_name" type="text" autocomplete="name" placeholder="Your name" required maxlength="80">
+          <label for="register-email">Email address</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
+          <label for="register-password">Password</label>
+          <div class="password-field">
+            <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 12 characters" required minlength="12" maxlength="128">
+            <button class="password-toggle" type="button" data-password-toggle="register-password" aria-label="Show password">Show</button>
+          </div>
+          <div class="password-strength" aria-live="polite">
+            <div class="strength-track"><span id="strength-fill"></span></div>
+            <span id="strength-label">Use at least 12 characters.</span>
+          </div>
+          <label for="register-confirm">Confirm password</label>
+          <div class="password-field">
+            <input id="register-confirm" name="password_confirm" type="password" autocomplete="new-password" placeholder="Enter your password again" required maxlength="128">
+            <button class="password-toggle" type="button" data-password-toggle="register-confirm" aria-label="Show password">Show</button>
+          </div>
+          <label class="auth-checkbox terms-checkbox"><input name="terms" type="checkbox" required><span>I agree to the <button class="auth-inline-link" type="button" data-legal-notice="terms">Terms</button> and <button class="auth-inline-link" type="button" data-legal-notice="privacy">Privacy Policy</button>.</span></label>
+          <p class="auth-message" id="register-message" role="alert" aria-live="polite"></p>
+          <button class="auth-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <p class="auth-switch">Already have an account? <a href="/login">Log in</a></p>
+        </form>
+        <p class="auth-footnote">Your account is stored securely in this app's local database.</p>
+      </div>
+    </section>
+  </main>
+  <dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
+    <form method="dialog">
+      <button class="legal-close" aria-label="Close">×</button>
+    </form>
+    <h2 id="legal-title"></h2>
+    <p id="legal-copy"></p>
+  </dialog>
+  <script src="/auth.js" defer></script>
+</body>
+</html>

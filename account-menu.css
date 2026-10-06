@@ -1,0 +1,76 @@
+.sidebar {
+  background: #112a28;
+}
+
+.sidebar-auth-actions {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid #29504b;
+}
+
+.side-nav .profile-area {
+  box-sizing: border-box;
+  height: 48.8px;
+  flex: 0 0 48.8px;
+}
+
+.profile-area .profile-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.profile-area .profile-card:hover {
+  background: #1a4541;
+  border-color: #315a54;
+}
+
+.profile-area .avatar {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: #315a54;
+  color: #e5f0ec;
+}
+
+.profile-copy {
+  display: block;
+  min-width: 0;
+  flex: 1;
+}
+
+.profile-area .profile-copy strong {
+  overflow: hidden;
+  color: #f4f8f6;
+  font-size: 11px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-area .profile-copy small {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: #94ada6;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-area .profile-card {
+    transition-duration: 1ms;
+  }
+}
