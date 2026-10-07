@@ -4,6 +4,7 @@ from datetime import UTC, datetime, timedelta
 import hashlib
 import hmac
 import json
+import logging
 import os
 import re
 import secrets
@@ -18,6 +19,7 @@ from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = Path(os.environ.get("PAPERTRAIL_DB_PATH", ROOT / "papertrail.sqlite3"))
+logger = logging.getLogger(__name__)
 SESSION_COOKIE = "papertrail_session"
 PASSWORD_ITERATIONS = 600_000
 SESSION_TTL = timedelta(hours=12)
@@ -29,7 +31,9 @@ DUMMY_HASH = hashlib.pbkdf2_hmac("sha256", b"invalid-password", DUMMY_SALT, PASS
 PUBLIC_ASSETS = {
     "main.css",
     "account-menu.css",
+    "settings-dashboard.css",
     "app.js",
+    "settings-ui.js",
     "account-actions.js",
     "auth.css",
     "auth.js",
@@ -98,10 +102,11 @@ def initialize_database() -> None:
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     initialize_database()
+    logger.info("SQLite database: %s", DB_PATH.resolve())
     yield
 
 
-app = FastAPI(title="Papertrail Invoice API", version="2.0.0", lifespan=lifespan)
+app = FastAPI(title="Manu Invoice Studio API", version="2.0.0", lifespan=lifespan)
 
 
 class InvoicePayload(BaseModel):

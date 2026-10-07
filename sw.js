@@ -1,5 +1,5 @@
-const CACHE_NAME='papertrail-v26';
-const APP_SHELL=['./main.css','./account-menu.css','./app.js','./account-actions.js','./auth.html','./auth.css','./auth.js','./offline.html','./manifest.webmanifest','./icons/apple-touch-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/the-walkin-logo.png'];
+const CACHE_NAME='papertrail-v37';
+const APP_SHELL=['./main.css','./account-menu.css','./settings-dashboard.css','./app.js','./settings-ui.js','./account-actions.js','./auth.html','./auth.css','./auth.js','./offline.html','./manifest.webmanifest','./icons/apple-touch-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/the-walkin-logo.png'];
 const APP_URLS=new Set(APP_SHELL.map(asset=>new URL(asset,self.registration.scope).pathname));
 
 self.addEventListener('install',event=>event.waitUntil(

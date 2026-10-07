@@ -19,7 +19,7 @@ if (typeof originalDashboardRenderer === 'function') {
 syncAccountProfile();
 
 document.addEventListener('click', event => {
-  const action = event.target.closest('.side-nav [data-account-action]');
+  const action = event.target.closest('[data-account-action="logout"]');
   if (!action) return;
   if (action.dataset.accountAction === 'logout') {
     action.disabled = true;

@@ -1,7 +1,7 @@
 {
 	"id": "./",
-	"name": "Papertrail Invoice Studio",
-	"short_name": "Papertrail",
+	"name": "Manu Invoice Studio",
+	"short_name": "Manu",
 	"start_url": "./",
 	"scope": "./",
 	"display": "standalone",
